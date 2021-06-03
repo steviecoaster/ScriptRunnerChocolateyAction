@@ -1,4 +1,4 @@
-function Install-ChocolateyPackage.ps1 {
+function Install-ChocolateyPackage {
     [CmdletBinding()]
     Param(
         [Parameter(ParameterSetName = "package", Mandatory)]
