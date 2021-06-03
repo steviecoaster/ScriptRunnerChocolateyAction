@@ -48,7 +48,7 @@ function Install-ChocolateyPackage {
 
         Switch ($PSCmdlet.ParameterSetName) {
             'package' {
-                $ChocoArgs.Add("$($Package.ToString() -join ';')")
+                $ChocoArgs.Add("$($Package -join ';')")
             }
             'config' {
                 $ChocoArgs.Add($PackageConfig)
