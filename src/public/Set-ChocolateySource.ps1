@@ -14,7 +14,7 @@ function Set-ChocolateySource {
         $FriendlyName,
         
         [Parameter(ParameterSetName = "add", Mandatory)]
-        [Parameter(ParameterSetName = "remove", Mandatory)]
+        [Parameter(ParameterSetName = "remove")]
         [String]
         $Source,
 
