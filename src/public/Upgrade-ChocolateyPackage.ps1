@@ -22,7 +22,7 @@ function Upgrade-ChocolateyPackage {
     }
 
     process {
-        $ChocoArgs.Add("$($Package -join ' ')")
+        $ChocoArgs.Add("$($Package -join ';')")
 
         if($Source){
             $ChocoArgs.Add("--source='$Source'")
