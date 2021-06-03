@@ -115,6 +115,13 @@ function Set-ChocolateySource {
                         }
                     }
                 }
+
+                try {
+                    & choco @ChocoArgs
+               }
+               catch {
+                   throw $_
+               }
             }
 
             'Remove' {
@@ -136,14 +143,16 @@ function Set-ChocolateySource {
                         }
                     }
                 }
+
+                try {
+                    & choco @ChocoArgs
+               }
+               catch {
+                   throw $_
+               }
             }
         }
 
-        try {
-            & choco @ChocoArgs
-       }
-       catch {
-           throw $_
-       }
+        
     }
 }
