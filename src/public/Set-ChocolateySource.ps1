@@ -14,7 +14,7 @@ function Set-ChocolateySource {
         $FriendlyName,
         
         [Parameter(ParameterSetName = "add", Mandatory)]
-        [Parameter(ParameterSetName = "remove")]
+        [Parameter(ParameterSetName = "remove", Mandatory)]
         [String]
         $Source,
 
@@ -62,7 +62,9 @@ function Set-ChocolateySource {
 
         switch ($PSCmdlet.ParameterSetName) {
             'Add' {
-            
+                
+                $ChocoArgs.Add('add')
+
                 #Add the base arguments, then Add the remainder from provided parameter values
                 foreach ($BoundParam in $PSBoundParameters.GetEnumerator()) {
                     $parameter = $null
@@ -125,6 +127,8 @@ function Set-ChocolateySource {
             }
 
             'Remove' {
+
+                $ChocoArgs.Add('remove')
                 foreach ($BoundParam in $PSBoundParameters.GetEnumerator()) {
                     $parameter = $null
                     $value = $null
