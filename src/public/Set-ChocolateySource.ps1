@@ -138,5 +138,12 @@ function Set-ChocolateySource {
                 }
             }
         }
+
+        try {
+            & choco @ChocoArgs
+       }
+       catch {
+           throw $_
+       }
     }
 }
